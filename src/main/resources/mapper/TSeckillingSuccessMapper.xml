@@ -1,0 +1,27 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hsy.seckilling.dao.TSeckillingSuccessMapper">
+    <insert id="getById" parameterType="TSeckillingSuccess">
+        INSERT  IGNORE into
+            t_seckilling_success(seckilling_item_id,user_phone)
+        values(#{seckillingItemId},#{userPhone})
+    </insert>
+    <select id="getSeckillingSuccessWithSeckillingItem" resultType="TSeckillingSuccess">
+        SELECT
+          tss.seckilling_item_id,
+          tss.user_phone,
+          tss.create_time,
+          tss.state,
+          tsi.name "seckillingItem.name",
+          tsi.number "seckillingItem.number",
+          tsi.create_time "seckillingItem.createTime",
+          tsi.start_time "seckillingItem.startTime",
+          tsi.end_time "seckillingItem.endTime"
+        FROM seckilling.t_seckilling_success tss
+        INNER JOIN seckilling.t_seckilling_item tsi
+        ON tsi.id = tss.seckilling_item_id
+        WHERE tss.seckilling_item_id = #{seckillingId}
+    </select>
+</mapper>
