@@ -1,6 +1,7 @@
 package com.hsy.seckilling.dao;
 
 import com.hsy.seckilling.entity.TSeckillingSuccess;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @author heshiyuan
@@ -28,5 +29,5 @@ public interface TSeckillingSuccessMapper {
      * @author heshiyuan
      * @date 2017/10/30 18:39
      */
-    TSeckillingSuccess getSeckillingSuccessWithSeckillingItem(long seckillingId) ;
+    TSeckillingSuccess getSeckillingSuccessWithSeckillingItem(@Param("seckillingId") long seckillingId, @Param("userPhone") long userPhone) ;
 }

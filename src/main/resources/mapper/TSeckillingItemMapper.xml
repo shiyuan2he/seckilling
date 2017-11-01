@@ -21,7 +21,7 @@
         LIMIT #{offset} , #{limit}
     </select>
 
-    <update id="reduceNumber" parameterType="java.lang.Long" >
+    <update id="reduceNumber">
         UPDATE
             t_seckilling_item
         set

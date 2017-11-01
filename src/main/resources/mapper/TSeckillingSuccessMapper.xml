@@ -3,10 +3,10 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.hsy.seckilling.dao.TSeckillingSuccessMapper">
-    <insert id="getById" parameterType="TSeckillingSuccess">
+    <insert id="insertSeckillingSuccess" parameterType="TSeckillingSuccess">
         INSERT  IGNORE into
-            t_seckilling_success(seckilling_item_id,user_phone)
-        values(#{seckillingItemId},#{userPhone})
+            t_seckilling_success(seckilling_item_id,user_phone,create_time,state)
+        values(#{seckillingItemId},#{userPhone},#{createTime},#{state})
     </insert>
     <select id="getSeckillingSuccessWithSeckillingItem" resultType="TSeckillingSuccess">
         SELECT
@@ -23,5 +23,6 @@
         INNER JOIN seckilling.t_seckilling_item tsi
         ON tsi.id = tss.seckilling_item_id
         WHERE tss.seckilling_item_id = #{seckillingId}
+        AND  tss.user_phone = #{userPhone}
     </select>
 </mapper>

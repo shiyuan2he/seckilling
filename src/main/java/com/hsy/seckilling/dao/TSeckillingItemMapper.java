@@ -1,6 +1,7 @@
 package com.hsy.seckilling.dao;
 
 import com.hsy.seckilling.entity.TSeckillingItem;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.Date;
 import java.util.List;
@@ -32,7 +33,7 @@ public interface TSeckillingItemMapper {
      * @author heshiyuan
      * @date 2017/10/30 17:40
      */
-    List<TSeckillingItem> getAll(int offset, int limit) ;
+    List<TSeckillingItem> getAll(@Param("offset") int offset, @Param("limit") int limit) ;
     /**
      * @description <p>减库存</p>
      * @param seckillingId 减库存的商品ID
@@ -41,5 +42,5 @@ public interface TSeckillingItemMapper {
      * @author heshiyuan
      * @date 2017/10/30 17:42
      */
-    int reduceNumber(long seckillingId,Date killTime) ;
+    int reduceNumber(@Param("seckillingId") long seckillingId,@Param("killTime") Date killTime) ;
 }

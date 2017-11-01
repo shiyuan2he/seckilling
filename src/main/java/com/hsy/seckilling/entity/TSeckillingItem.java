@@ -46,5 +46,17 @@ public class TSeckillingItem{
 	public Date getEndTime(){
 		return endTime;
 	}
+
+    @Override
+    public String toString() {
+        return "TSeckillingItem{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", number=" + number +
+                ", createTime=" + createTime +
+                ", startTime=" + startTime +
+                ", endTime=" + endTime +
+                '}';
+    }
 }
 
