@@ -1,15 +1,12 @@
 <%@page contentType="text/html;charset=utf-8" language="java" %>
-<%
-    String path = request.getContextPath();
-    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"";
-%>
+<%@include file="../common/tag.jsp"%>
 <html>
 <head>
     <title>登陆</title>
     <%@include file="../common/head.jsp"%>
 </head>
 <body>
-<div class="container">
+    <div class="container">
         <h2 class="text-center">登陆</h2>
         <form class="text-center">
             <div class="form-group">
@@ -32,6 +29,8 @@
             <input type="button" onclick="javascript:login.doLogin();" class="btn btn-info text-center" value="登陆" />
         </form>
     </div>
+    <script type="text/javascript" src="<%=basePath%>/resources/java-resource/script/js/ajax.js"></script>
+    <script type="text/javascript" >var path = '<%=basePath%>' ;</script>
     <script type="text/javascript" src="<%=basePath%>/resources/script/login.js"></script>
 </body>
 </html>

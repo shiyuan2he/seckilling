@@ -4,4 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
 ">
+    <bean class="com.hsy.java.util.resources.JavaResourceHelper"></bean>
+    <import resource="spring-dao.xml"/>
+    <import resource="spring-service.xml"/>
+    <import resource="spring-web.xml"/>
 </beans>

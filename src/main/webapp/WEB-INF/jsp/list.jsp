@@ -1,4 +1,4 @@
-<%@page contentType="text/html;charset=utf-8" language="java"  %>
+<%@page contentType="text/html;charset=utf-8" language="java" %>
 <%@include file="common/tag.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -9,6 +9,15 @@
 <body>
     <div class="container">
         <div class="panel panel-default">
+            <div class="panel-heading text-center">
+                <c:if test="${sso_key_user_session.mobile != null}">
+                    <h4>${sso_key_user_session.mobile}</h4>
+                    <span id="logout" onclick="login.logout();"><h4>退出</h4></span>
+                </c:if>
+                <c:if test="${sso_key_user_session.mobile == null}">
+                    <a href="/"><h4>登陆</h4></a>
+                </c:if>
+            </div>
             <div class="panel-heading text-center">
                 <h2>秒杀列表</h2>
             </div>
@@ -42,5 +51,6 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="<%=basePath%>/resources/script/login.js"></script>
 </body>
 </html>
