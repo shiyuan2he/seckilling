@@ -23,9 +23,6 @@
             2、允许使用／做整体映射
     -->
     <mvc:default-servlet-handler/>
-    <mvc:resources location="/resources/script/" mapping="/**/**/*.js"/>
-    <mvc:resources location="/resources/java-resource/script/js/" mapping="/**/**/**/**/*.js"/>
-
     <!--
         3.配置视图解析器
     -->

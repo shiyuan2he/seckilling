@@ -6,16 +6,24 @@ var login = {
         if(json.success){
             window.location.href = path + '/seckilling/list' ;
         }else{
-            window.location.href = path + '/seckilling/list' ;
+            if(json.code == 'SSO9999'){
+                login.changeImageCode();
+            }else{
+                window.location.href = path + '/seckilling/list' ;
+            }
         }
     },
     doLogin : function(){
         console.log("login") ;
-        var url = login.requestUrl_login + "?mobile="+$('#mobile').val()+"&password="+$('#password').val();
+        var url = login.requestUrl_login + "?mobile="+$('#mobile').val()+"&password="+$('#password').val()+"&codeImage="+$("#codeImage").val();
         ajax.getJsonp(url,"login.getData") ;
     },
     logout : function(){
         console.log("logout") ;
         ajax.getJsonp(login.requestUrl_logout,login.getData()) ;
+    },
+    changeImageCode : function () {
+        console.log("changeImageCode");
+        $("#codeImg")[0].src = "http://localhost:8080/sso/image/kaptchaCode";
     }
 }
