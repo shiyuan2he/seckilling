@@ -1,5 +1,5 @@
 var reg = {
-    requestUrl_reg : 'http://localhost:8080/sso/reg',
+    requestUrl_reg : 'http://localhost:9001/sso/reg',
     getData : function(json){
         console.log("回调函数返回值：",json) ;
         if(json.success){

@@ -25,7 +25,7 @@
                 <label for="codeImage" class="text-left">
                     验证码:
                     <input type="text" class="form-control" id="codeImage" placeholder="请输入验证码">
-                    <img src="http://localhost:8080/sso/image/kaptchaCode" onclick="javascript:login.changeImageCode();" id="codeImg" />
+                    <img src="http://localhost:9001/sso/image/kaptchaCode" onclick="javascript:login.changeImageCode();" id="codeImg" />
                 </label>
             </div>
             <div class="form-check">

@@ -1,6 +1,6 @@
 var login = {
-    requestUrl_login : 'http://localhost:8080/sso/login',
-    requestUrl_logout : 'http://localhost:8080/sso/logout',
+    requestUrl_login : 'http://localhost:9001/sso/login',
+    requestUrl_logout : 'http://localhost:9001/sso/logout',
     getData : function(json){
         console.log("回调函数返回值：",json) ;
         if(json.success){
@@ -24,6 +24,6 @@ var login = {
     },
     changeImageCode : function () {
         console.log("changeImageCode");
-        $("#codeImg")[0].src = "http://localhost:8080/sso/image/kaptchaCode";
+        $("#codeImg")[0].src = "http://localhost:9001/sso/image/kaptchaCode";
     }
 }
